@@ -4,7 +4,7 @@ pipeline {
         maven 'Maven'
     }
     environment {
-        DOCKERHUB_CREDENTIALS=credentials('Docker')
+        CREDENTIALS=credentials('Docker')
         AWS=credentials('AWS')
     }
     stages {
@@ -16,12 +16,12 @@ pipeline {
         }
         stage('Login') {
 			steps {
-				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+				sh 'echo $CREDENTIALS_PSW | docker login -u $CREDENTIALS_USR --password-stdin'
 			}
 		}
         stage('push image') {
             steps {
-                sh 'docker push bjgomes/maven:latest'
+                sh 'docker push kvaughn2021/maven:latest'
             }
         }
         stage ('K8S Deploy') {
