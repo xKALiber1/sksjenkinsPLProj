@@ -7,8 +7,8 @@ systemctl enable apache2
 apt install awscli -y
 apt install openjdk-11-jdk -y
 apt install git
-git config --global user.name "Brian"
-git config --global user.email "brian.james.gomes@gmail.com"
+git config --global user.name "Kal.V"
+git config --global user.email "kvaughn@skillstorm.com"
 git config --global credential.helper store
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | tee \
         /usr/share/keyrings/jenkins-keyring.asc > /dev/null
@@ -18,7 +18,6 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 apt-get update
 apt-get install jenkins -y
 apt install docker.io -y
-git clone https://github.com/bdgomey/Pipeline.git
 cd /opt
 wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
 tar -xzvf apache-maven-3.8.4-bin.tar.gz
@@ -28,4 +27,3 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 mv /tmp/eksctl /usr/local/bin
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-cat /var/lib/jenkins/secrets/initialAdminPassword
