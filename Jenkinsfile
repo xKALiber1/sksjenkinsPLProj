@@ -22,6 +22,7 @@ sh 'echo $PASSWORD | docker login -u $USERNAME --password-stdin'
 	}
         stage('push image') {
             steps {
+                sh 'mvn clean install'
                 sh 'docker push kvaughn2021/maven:latest'
             }
         }
