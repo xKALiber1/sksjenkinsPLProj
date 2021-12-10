@@ -45,6 +45,7 @@ ___
         4. docker pipeline
         5. kubernetes
         6. kubernetes cli
+        6.5 Kubernetes Continuous Deploy
         7. blue ocean
         8. AWS credentials
 
